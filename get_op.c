@@ -11,6 +11,7 @@ void (*get_op(char *opcode))(stack_t **stack, unsigned int line_num)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"nop", nop},
 		{"NULL", NULL}
 	};
 	for (i = 0; i < 3; i++)
