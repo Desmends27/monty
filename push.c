@@ -1,6 +1,8 @@
 #include "monty.h"
 /**
  * push - pushes an element to the stack
+ * @stack: pointer to the stack variable
+ * @line_number: line number incase of error 
  *
  */
 void push(stack_t **stack, __attribute__((unused)) unsigned int line_number)

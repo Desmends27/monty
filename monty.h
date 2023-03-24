@@ -37,6 +37,7 @@ typedef struct instruction_s
 } instruction_t;
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 void (*get_op(char *opcode))(stack_t **stack, unsigned int line_num);
 extern int number;
 #endif /*MONTY_H*/

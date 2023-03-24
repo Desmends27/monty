@@ -10,6 +10,7 @@ void (*get_op(char *opcode))(stack_t **stack, unsigned int line_num)
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{"NULL", NULL}
 	};
 	for (i = 0; i < 3; i++)
