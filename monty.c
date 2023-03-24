@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		fnc = get_op(opcode);
 		if (fnc == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction <opcode>", line_number);
+			fprintf(stderr, "L%d: unknown instruction <opcode>\n", line_number);
             exit(EXIT_FAILURE);
 		}
 		fnc(&stack, line_number);
