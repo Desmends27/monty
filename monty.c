@@ -31,8 +31,13 @@ int main(int argc, char *argv[])
 	{
 		number = 0;
 		opcode = strtok(line, DELIM);
+		    if (line[0] == '\n' || strspn(line, DELIM) == strlen(line)) 
+		{
+			/* Skip empty or whitespace-only lines */
+			continue;
+		}
 		arg = strtok(NULL, DELIM);
-		if (arg == NULL && strcmp(opcode, "push") == 0)
+		if ((arg == NULL && strcmp(opcode, "push") == 0))
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
