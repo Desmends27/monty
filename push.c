@@ -8,7 +8,7 @@
 void push(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
     stack_t *new = malloc(sizeof(stack_t));
-    new->n = number;
+    new->n = atoi(var.arg);
     new->next = NULL;
     new->prev = NULL;
     if (new == NULL)

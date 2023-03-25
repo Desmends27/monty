@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #ifndef MONTY_H
 #define MONTY_H
 #define DELIM " \t\r\n\a"
@@ -40,5 +41,22 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void (*get_op(char *opcode))(stack_t **stack, unsigned int line_num);
-extern int number;
+
+/**
+ * vars - variables, args and functions for extern
+ * @arg: command arguements
+ * @file: pointer to the monty file
+ * @line: line in file
+ * @lifi: flag change stack <-> queue
+ * Description: Global variables to be used through out program
+ */
+typedef struct vars_t
+{
+	char *arg;
+	FILE *file;
+	char *line;
+	int lifi;
+} var_s;
+extern var_s var;
+
 #endif /*MONTY_H*/
