@@ -18,7 +18,7 @@ void (*get_op(char *opcode))(stack_t **stack, unsigned int line_num)
 	{
 		if (strcmp(opcode, ops[i].opcode) == 0)
 		{
-			return(ops[i].f);
+			return (ops[i].f);
 		}
 	}
 	return (NULL);

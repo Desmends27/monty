@@ -6,6 +6,7 @@
  * Return: 1 on sucess, 0 on error 
  * 
  */
+
 int number;
 int main(int argc, char *argv[])
 {
