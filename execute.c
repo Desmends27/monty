@@ -11,6 +11,9 @@ int execute (stack_t **stack, unsigned int line_num, FILE *fp)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
+		{"add", add},
+		{"swap", swap},
 		{"nop", nop},
 		{"NULL", NULL}
 	};
