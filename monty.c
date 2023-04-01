@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	char *line = NULL;
 	FILE *fp;
-	int line_number = 1;
+	int line_number = 0;
 	stack_t *stack = NULL;
 	size_t line_read = 0;
 	ssize_t read_line = 1;
