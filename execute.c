@@ -32,6 +32,7 @@ int execute (stack_t **stack, unsigned int line_num, FILE *fp)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_num, var.line);
 		fclose(fp);
+		free_stack(stack);
 		exit(EXIT_FAILURE);
 		return (1);
 	}
