@@ -1,6 +1,6 @@
-#define _GNU_SOURCE
 #ifndef MONTY_H
 #define MONTY_H
+#define GNU_SOURCE
 #define DELIM " \t\r\n\a"
 #include <stdio.h>
 #include <stdlib.h>
@@ -44,14 +44,16 @@ void pop(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **head);
-int execute (stack_t **stack, unsigned int line_num, FILE *fp);
+int execute(stack_t **stack, unsigned int line_num, FILE *fp);
 /**
- * var_t - vars, functions used through out program
+ * struct var_s - vars, functions used through out program
  * @number: number argument
  * @opcode: code obtained
  * @line: line read from file
+ * @arg: argument passed to opcode(mainly push)
+ * @fp: file being used
  * Description: stores global vars in the program
- * 
+ *
  */
 typedef struct var_s
 {
