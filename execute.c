@@ -1,10 +1,13 @@
 #include "monty.h"
 /**
- * excute - calls the command to be excuted
- * @opcode - string of the op command
+ * execute - calls the command to be excuted
+ * @stack: head of the stack
+ * @line_num: current line number
+ * @fp: file opened
+ * Return:1 on success, 0 on error
  */
 
-int execute (stack_t **stack, unsigned int line_num, FILE *fp)
+int execute(stack_t **stack, unsigned int line_num, FILE *fp)
 {
 	int i = 0;
 	instruction_t ops[] = {
@@ -17,6 +20,7 @@ int execute (stack_t **stack, unsigned int line_num, FILE *fp)
 		{"nop", nop},
 		{"NULL", NULL}
 	};
+
 	var.opcode = strtok(var.line, DELIM);
 	var.arg = strtok(NULL, DELIM);
 	while (ops[i].opcode && var.opcode)
@@ -28,7 +32,7 @@ int execute (stack_t **stack, unsigned int line_num, FILE *fp)
 		}
 		i++;
 	}
-	if ( var.opcode && ops[i].opcode == NULL)
+	if (var.opcode && ops[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_num, var.line);
 		fclose(fp);

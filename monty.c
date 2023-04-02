@@ -3,8 +3,8 @@
  * main - calls the various functions to excute command
  * @argc: argument counter
  * @argv: file to be passsed in
- * Return: 1 on sucess, 0 on error 
- * 
+ * Return: 1 on sucess, 0 on error
+ *
  */
 var_t var;
 int main(int argc, char *argv[])
@@ -18,10 +18,10 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr,"USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	fp = fopen(argv[1],"r");
+	fp = fopen(argv[1], "r");
 	var.fp = fp;
 	if (fp == NULL)
 	{
@@ -30,12 +30,12 @@ int main(int argc, char *argv[])
 	}
 	while (read_line > 0)
 	{
-		read_line = getline(&line, &line_read,fp);
+		read_line = getline(&line, &line_read, fp);
 		line_number++;
 		var.line = line;
 		if (read_line > 0)
 		{
-			execute(&stack, line_number,fp);
+			execute(&stack, line_number, fp);
 		}
 	}
 	fclose(fp);

@@ -3,11 +3,11 @@
  * swap - swap head and head->next
  * @stack: head of stack
  * @line_number: error handling
- * 
+ *
  */
 void swap(stack_t **stack, unsigned int line_number)
 {
-  	stack_t *h;
+	stack_t *h;
 	int len = 0, temp;
 
 	h = *stack;
